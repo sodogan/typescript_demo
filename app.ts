@@ -1,6 +1,19 @@
+enum Favourite_Colors {
+  RED,
+  GREEN,
+  YELLOW,
+}
+
+enum Roles {
+  ADMIN = 1,
+  KEY,
+}
+
 const person = {
   name: "solen",
-  age: 30,
+  role: Roles.ADMIN,
 };
 
-console.log(person);
+if (person.role == Roles.ADMIN) {
+  console.log("Yes its an admin role");
+}
