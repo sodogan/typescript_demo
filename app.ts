@@ -1,19 +1,12 @@
-enum Favourite_Colors {
-  RED,
-  GREEN,
-  YELLOW,
-}
-
-enum Roles {
-  ADMIN = 1,
-  KEY,
-}
-
-const person = {
-  name: "solen",
-  role: Roles.ADMIN,
+//Better to use unknown then any type
+let generateError = (errMessage: string, code: number) => {
+  throw {
+    message: errMessage,
+    errorCode: code,
+  };
 };
 
-if (person.role == Roles.ADMIN) {
-  console.log("Yes its an admin role");
-}
+//never is returned
+//THis code crashes the code so never returns anything
+//if you do console.log it shows nothing
+generateError("An error ocuured", 100);
