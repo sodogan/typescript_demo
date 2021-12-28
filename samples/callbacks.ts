@@ -1,5 +1,5 @@
 //try return types
-function addUp(
+function addUpAgain(
   val1: number,
   val2: number,
   callbackHandler: (val: number) => number
@@ -9,7 +9,7 @@ function addUp(
 }
 
 //test in here
-addUp(12, 34, (result) => {
+addUpAgain(12, 34, (result) => {
   console.log(`The value is ${result}`);
   return 0;
 });
