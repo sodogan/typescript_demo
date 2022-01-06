@@ -1,21 +1,44 @@
-//lets use Map first time
-//Access the DOM object
-let btn = document.querySelector("#myButton");
-//strict mode finds that its nullable ! makes it sure
+interface Named {
+  readonly name: string;
+}
 
-//add no-impilicit returns
-let add = (val1: number, val2: number) => {
-  if (val1 > 0 && val2 > 0) {
-    return val1 + val2;
-  }
-  return;
+interface Greetable extends Named {
+  greet(): void;
+}
+
+let manager: Greetable;
+
+manager = {
+  name: "solen",
+  greet: function () {
+    console.log("Inside");
+  },
 };
-//let btn = document.querySelector("#myButton")!;
-function eventHandler(message: string) {
-  console.log("You have pressed a button" + message);
+
+//Now with classes
+
+class Employee implements Greetable {
+  public name: string;
+  private _age: number;
+  private _address: string;
+
+  constructor(name: string, age: number, address: string) {
+    this.name = name;
+    this._age = age;
+    this._address = address;
+  }
+
+  greet(): void {
+    console.log(" i am greeting you");
+  }
+  get address() {
+    return this._address;
+  }
+  get age() {
+    return this._age;
+  }
 }
 
-//add event listener
-if (btn) {
-  btn.addEventListener("click", eventHandler.bind(null, "hello", true));
-}
+let emp1 = new Employee("solen", 40, "beylikduzu");
+
+emp1.greet();
