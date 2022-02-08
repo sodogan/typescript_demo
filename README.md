@@ -1,2 +1,4 @@
 # typescript_demo
-tyepscript
+typescript demo code
+classes 
+interfaces
