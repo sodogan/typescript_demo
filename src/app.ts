@@ -1,3 +1,4 @@
+// A simple interface
 interface Named {
   readonly name: string;
 }
