@@ -17,7 +17,6 @@ manager = {
 };
 
 //Now with classes
-
 class Employee implements Greetable {
   public name: string;
   private _age: number;
